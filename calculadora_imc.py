@@ -43,8 +43,8 @@ def Calcular():
     nome = NomeEntry.get()
     peso = float(PesoEntry.get())
     altura = float(AlturaEntry.get())
-    Imc = (peso / ((altura) * (altura)))
-    messagebox.showinfo(title="calculo imc", message=(nome, ', seu imc é:', Imc))
+    Imc = peso / (altura ** 2) 
+    messagebox.showinfo(title="calculo imc", message=(f'{nome}, seu imc é: {Imc:.2f}'))
 
 BotaoCalcular = ttk.Button(RightFrame, text="Calcular", width=20, command=Calcular)
 BotaoCalcular.place(x=50, y=150)

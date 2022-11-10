@@ -36,14 +36,18 @@ AlturaLabel.place(x=47, y=100)
 AlturaEntry = ttk.Entry(RightFrame, width=30)
 AlturaEntry.place(x=10, y=100)
 
-#criando botão
+#criando botão e entrada de dados
 
 def Calcular():
     
     nome = NomeEntry.get()
-    peso = float(PesoEntry.get())
-    altura = float(AlturaEntry.get())
-    Imc = peso / (altura ** 2) 
+    peso = PesoEntry.get()
+    altura = AlturaEntry.get()
+
+    float_peso = float(peso)
+    float_altura = float(altura)
+
+    Imc = float_peso / (float_altura ** 2) 
     messagebox.showinfo(title="calculo imc", message=(f'{nome}, seu imc é: {Imc:.2f}'))
 
 BotaoCalcular = ttk.Button(RightFrame, text="Calcular", width=20, command=Calcular)
